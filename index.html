@@ -1,16 +1,98 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>VideoRender</title>
-  </head>
-  <body>
-    <h1>VideoRender</h1>
-    <br>
-    <h2>Comunicamos tu proyecto de una manera ¡genial!.</h2> 
-    <h2>Secos desarrollando Videos 3D, Renders, Realidad Virtual e Infografías.</h2>
-    <br>
-    <p>Escríbenos a [Link](videorender.cl@gmail.com) o ponte en contacto a través de un mensaje en LinkedIn [https://www.linkedin.com/in/videorender/](url)</p>
-    [https://www.linkedin.com/in/videorender/](url)
-    [Link](videorender.cl@gmail.com)
-  </body>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="keywords" content="Render, Video, Realidad Virtual">
+		<meta name="description" content="Desarrollo de Renders y Videos">
+		<meta name="owner" content="Enrique Correa">
+		<meta name="author" content="VideoRender.cl">
+		<meta name="robots" content="index, follow">
+
+
+
+		<title>VideoRender</title>
+
+		<!-- ENLACES: -->
+		<!-- Enlace Modernizr -->
+		<script src="js/modernizr-custom.js"></script>
+		<!-- Enlace Normalize -->
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<!-- Enlace Fuentes -->
+		<link rel="stylesheet" type="text/css" href="css/fuentes/Poppins.css">
+		<link rel="stylesheet" type="text/css" href="css/fuentes/Roboto.css">
+		<!-- Enlace Menú Navegación CSS -->
+		<link rel="stylesheet" type="text/css" href="css/Menú.css">
+		<!-- Enlace Archivo CSS -->
+		<link rel="stylesheet" type="text/css" href="css/VideoRender.css">
+
+	</head>
+	<body>
+
+		<header>
+			<!-- BARRA SUPERIOR (primer elemento contenedor) -->
+			<nav class="navbar">
+
+				<!-- Logotipo + Link (elemento 1)-->
+				<h3><a href="#"><img src="img/VR PNG.png" class="logo" alt="logotipo"></a></h3>
+
+				<!-- Etiqueta <input> type:checkbox (elemento 2), (se activa o desactiva) permite realizar una acción de llenado de una casilla o no, pero en este caso para activar o desactivar ventana emergente de menú -->
+	        	<input type="checkbox" id="nav_menu_checkbox" />
+
+
+	        	<!-- Ícono Hamburguesa: Se reemplaza la casilla de verificación, por ícono "hamburguesa", convirtiendo la acción en la apertura de la pestaña con las opciones.
+	        	Asignando ícono a la etiqueta del input -->
+	        	<label for="nav_menu_checkbox" class="nav_menu_icon">menu</label>
+				
+
+				<!-- Versión Móvil: Ventana emergente
+					 Versión Escritorio: Contenidos Página -->
+	        	<div class="nav_menu_container">
+
+	        		<!-- Ícono X: Se reemplaza la casilla de verificación, por ícono "X" -->
+	        		<label for="nav_menu_checkbox" class="nav_menu_close">close</label>
+
+	            	<ul>
+	            		<li><a class="Home" href="#Home">Home</a></li>
+	            		<li><a class="Quienes-Somos" href="#Quienes-Somos">Quienes Somos</a></li>
+						<li><a class="Servicios" href="#Servicios">Servicios</a></li>
+						<li><a class="Proyectos" href="#Proyectos">Proyectos</a></li>
+						<li><a class="Blog" href="#Blog">Blog</a></li>
+						<li><a class="Contacto" href="#Contacto">Contacto</a></li>
+	            	</ul>
+	        	</div>
+	    	</nav>
+		</header>
+
+		<section id="Home">
+			<h1>Video Render</h1>
+		</section>
+
+		<section id="Quienes-Somos">
+			<h2>Quienes Somos</h2>
+		</section>
+
+		<section id="Servicios">
+			<h3>Servicios</h3>
+		</section>
+
+		<section id="Proyectos">
+			<h3>Proyectos</h3>
+		</section>
+
+		<section id="Blog">
+			<h3>Blog</h3>
+		</section>
+
+		<section id="Contacto">
+			<h3>Contacto</h3>
+			<a href="mailto:videorender.cl@gmail.com" id="Enviar">Enviar Correo</a>
+		</section>
+
+		<footer>
+			<div class="desarrollado-por">Sitio web desarrollado por <a href="https:www.videorender.cl">VideoRender</a>, 2020.</div>
+		</footer>
+
+	</body>
+
 </html>

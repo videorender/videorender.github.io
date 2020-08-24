@@ -1,0 +1,240 @@
+/* Importación de fuentes + íconos */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/oswald/v31/TK3_WkUHHAIjg75cFRf3bXL8LICs1_FvsUZiZQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v50/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+}
+
+/* -webkit-tap-highlight-color es una propiedad CSS no estándar que fija el color que sirve para 
+destacar un enlace cuando se golpea sobre él (normalmente con el dedo en dispositivos táctiles). 
+Ese color destacado indica que se ha presionado correctamente e indica el elemento 
+sobre el cuál se ha golpeado. */
+a, label {
+            -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* PROPIEDADES COMUNES A TODAS LAS VERSIONES */
+
+/* Propiedades Barra Superior de Navegación */
+.navbar{
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*       Sup Der Inf Izq */
+    padding: 10px 0 10px 30px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.25);
+}
+
+/* Propiedades Logotipo + Link */
+.logo{
+    margin: 0 -16px;
+    width: 48px;
+    border-radius: 50px;
+}
+
+/* ID Casilla de verificación CHECKBOX (donde se marca y desmarca) 
+Se hace coincidir posición con ícono hamburguesa */
+#nav_menu_checkbox{
+    position: relative;
+    opacity: 0;
+    transform: scale(0);
+}
+
+/* Icono Hamburguesa de Menú Emergente.
+Se hace coincidir posición con casilla de verificación checkbox */
+.nav_menu_icon{
+    position: absolute;
+    right: 8px;
+    cursor: pointer;
+    font-family: 'Material Icons';
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 50px;
+}
+.nav_menu_icon:hover{
+    background: rgba(0,0,0,0.05);
+}
+
+/* Contenedor Link u Opciones del Menú*/
+.nav_menu_container ul{
+    list-style: none;
+    display: flex;
+}
+
+
+/* Links u Opciones del Menú*/
+.nav_menu_container a{
+    text-decoration: none;
+    color: #575757;
+    white-space: nowrap;
+    margin: 10px 0px;
+    transition-duration: .2s;
+}
+/* Color de Opciones de Menú cuándo poso el mouse encima */
+.nav_menu_container a:hover{
+    color: #000;
+    background: rgba(0,0,0,0.05);
+}
+
+
+/* SOMBRA Lateral que oscurece el fondo 
+restaltando ventana emergente */
+.nav_menu_icon::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.2);
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 0.3s ;
+    will-change: opacity;
+}
+
+
+/* Ícono Menú Hamburguesa */
+#nav_menu_checkbox:checked ~ .nav_menu_icon::before{
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 2;
+}
+
+/* Ícono Menú X */
+.nav_menu_close{
+    font-family: 'Material Icons';
+    cursor: pointer;
+    position: fixed;
+    top: 14px;
+    right: 8px;
+    font-size: 24px;
+    padding: 8px;
+    border-radius: 50px;
+    transition-duration: .2s;
+}
+
+.nav_menu_close:hover{
+    background: rgba(0,0,0,0.05);
+}
+    
+
+/* Propiedades - Versión Móvil:
+  (El ancho máximo se establece 1 px menor a ancho mínimo versión tablet) */
+@media screen and (max-width: 766.9px){
+
+
+	/* Ventana Emergente en Versión Móvil */
+	.nav_menu_container{
+		
+		/* Alto Ventana Emergente */
+		height: 100%;
+
+		/* Ancho Ventana Emergente */
+        width: 267px;
+
+        /* 320 = (100% - 56) */
+        max-width: calc(100% + 10px);
+
+        /* Es posicionado con relación al contenedor inicial */
+        position: fixed;
+ 		/* Es posicionado en 0 arriba en relación al contenedor inicial */
+        top: 0;
+        /* Es posicionado en -320px a la  en relación al contenedor inicial */
+        right: -267px;
+
+        background-color: #fff;
+        z-index: 3;
+
+		/* Tiempo que tardará en aparecer y desaparecer la ventana emergente */
+        transition: transform 0.3s;
+
+        /* La propiedad will-change no es una propiedad "estética" sino funcional. Esto es, lo que hace es facilitar el rendimiento del navegador (UA) a la hora de manejar las páginas y su renderizado, pues de antemano sabe qué elementos van a sufrir qué cambios y de esta manera estar preparado para cuando sucedan. */
+        will-change: transform;
+    }
+
+	/* Contenedor de links - Versión Móvil:
+	  (Deja fuera al ícono X) */
+    .nav_menu_container ul{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        padding: 0;
+        margin:0;
+    }
+
+	/* Exterior de Links de Menú - Versión Móvil: */
+	.nav_menu_container li{
+		margin: 0px;
+		font-size: 1rem;   
+	}
+	/* Links de Menú - Versión Móvil: */
+    .nav_menu_container a{
+    	line-height: 60px;
+    }
+
+    /* Links de Menú - Versión Móvil: */
+    a.Home {
+    	padding: 18px 104px;
+    }
+    a.Quienes-Somos {
+    	padding: 18px 66px;
+    }
+    a.Servicios {
+    	padding: 18px 92.5px;
+    }
+    a.Proyectos {
+    	padding: 18px 88.5px;
+    }
+    a.Blog {
+    	padding: 18px 110.5px;
+    }
+    a.Contacto {
+    	padding: 18px 90px;
+    }
+
+	/* Pseudoclase:checked de etiqueta <input> type:checkbox 
+	(Animación antes y después / chequeado y no chequeado);
+	Al estar activada: */ 
+
+	/* ~ Hermano: Todo parrafo que venga después */
+	#nav_menu_checkbox:checked ~ .nav_menu_container{
+		transform: translateX(-100%);
+		box-shadow: 0px 5px 20px rgba(0,0,0,.5);
+	}
+}
+
+/* Propiedades - Versión Tablet en adelante: */
+@media screen and (min-width: 767px){
+
+	/* Se ocultan el icono de hamburguesa, el icono de X y SOMBRA lateral */
+	.nav_menu_icon,
+    .nav_menu_close,
+    .nav_menu_icon::before{
+    	display: none;
+    }
+	
+	/* Contenedor de Links - Versión Tablet en adelante:*/
+    .nav_menu_container ul{
+             /* Arriba - Derecha - Abajo - Izquierda*/
+    	margin: 0px 10px 0px 0px;
+    }
+
+    /* Padding Opciones de Barra Navegación - Versión Tablet en adelante:*/
+    .nav_menu_container a{
+    	padding: 13px 20px;
+    }
+}
