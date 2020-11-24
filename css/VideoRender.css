@@ -40,6 +40,10 @@ a{
     color: gray;
 }
 
+h4{
+	margin: 20px;
+}
+
 
 @media screen and (min-width: 320px){
     body {
