@@ -40,6 +40,14 @@ a{
     color: gray;
 }
 
+div{
+	margin-top: 20px;
+}
+
+p{
+	margin-top: 20px;
+}
+
 h4{
 	margin-top: 20px;
 }
