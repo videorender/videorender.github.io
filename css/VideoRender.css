@@ -40,10 +40,6 @@ a{
     color: gray;
 }
 
-div{
-	margin-top: 0px;
-}
-
 p{
 	margin-top: 20px;
 }
@@ -51,7 +47,6 @@ p{
 h4{
 	margin-top: 20px;
 }
-
 
 @media screen and (min-width: 320px){
     body {
