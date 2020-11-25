@@ -142,17 +142,6 @@ restaltando ventana emergente */
   (El ancho máximo se establece 1 px menor a ancho mínimo versión tablet) */
 @media screen and (max-width: 766.9px){
 
-    /* Propiedades Logotipo + Link */
-    .logo{
-
-    position: absolute;
-    margin: auto;
-    width: 30px;
-    border-radius: 50px;
-    /*       Sup Der Inf Izq */
-}
-    
-
 	/* Ventana Emergente en Versión Móvil */
 	.nav_menu_container{
 		
