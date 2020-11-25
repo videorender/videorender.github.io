@@ -32,15 +32,22 @@ a, label {
     justify-content: space-between;
     align-items: center;
     /*       Sup Der Inf Izq */
-    padding: 10px 0 10px 30px;
+    padding: 10px 0 10px 0px;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.25);
 }
 
 /* Propiedades Logotipo + Link */
 .logo{
-    margin: 0 -16px;
+    margin: 0 16px;
     width: 30px;
     border-radius: 50px;
+    /*       Sup Der Inf Izq */
+}
+
+.avion{
+    margin: 0 16px;
+    width: 20px;
+    right: 0px;
 }
 
 /* ID Casilla de verificación CHECKBOX (donde se marca y desmarca) 
@@ -55,7 +62,7 @@ Se hace coincidir posición con ícono hamburguesa */
 Se hace coincidir posición con casilla de verificación checkbox */
 .nav_menu_icon{
     position: absolute;
-    right: 8px;
+    left: 8px;
     cursor: pointer;
     font-family: 'Material Icons';
     font-size: 24px;
@@ -135,6 +142,16 @@ restaltando ventana emergente */
   (El ancho máximo se establece 1 px menor a ancho mínimo versión tablet) */
 @media screen and (max-width: 766.9px){
 
+    /* Propiedades Logotipo + Link */
+    .logo{
+
+    position: absolute;
+    margin: auto;
+    width: 30px;
+    border-radius: 50px;
+    /*       Sup Der Inf Izq */
+}
+    
 
 	/* Ventana Emergente en Versión Móvil */
 	.nav_menu_container{
@@ -198,9 +215,6 @@ restaltando ventana emergente */
     }
     a.Proyectos {
     	padding: 18px 88.5px;
-    }
-    a.Blog {
-    	padding: 18px 110.5px;
     }
     a.Contacto {
     	padding: 18px 90px;
