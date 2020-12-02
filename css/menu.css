@@ -36,25 +36,22 @@ a, label {
     box-shadow: 0px 0px 15px rgba(0,0,0,0.25);
 }
 
-/* Propiedades Logotipo + Link */
+/* Propiedades imagen logotipovr.png */
 .logo{
     margin: 0 16px;
-    width: 30px;
-    border-radius: 50px;
-    /*       Sup Der Inf Izq */
+    width: 30px; 
 }
 
+/* Propiedades imagen avion.png */
 .avion{
     margin: 0 16px;
-    width: 20px;
-    right: 0px;
+    width: 30px;
 }
 
-/* ID Casilla de verificación CHECKBOX (donde se marca y desmarca) 
-Se hace coincidir posición con ícono hamburguesa */
+/* Casilla de Verificación CHECKBOX (donde se marca y desmarca) */
 #nav_menu_checkbox{
     position: relative;
-    opacity: 0;
+    display: none;
     transform: scale(0);
 }
 
@@ -70,7 +67,7 @@ Se hace coincidir posición con casilla de verificación checkbox */
     border-radius: 50px;
 }
 .nav_menu_icon:hover{
-    background: rgba(0,0,0,0.05);
+    background: rgba(0,0,0,0.1);
 }
 
 /* Contenedor Link u Opciones del Menú*/
@@ -91,7 +88,7 @@ Se hace coincidir posición con casilla de verificación checkbox */
 /* Color de Opciones de Menú cuándo poso el mouse encima */
 .nav_menu_container a:hover{
     color: #000;
-    background: rgba(0,0,0,0.05);
+    background: rgba(0,0,0,0.1);
 }
 
 
@@ -125,8 +122,8 @@ restaltando ventana emergente */
     font-family: 'Material Icons';
     cursor: pointer;
     position: fixed;
-    top: 14px;
-    right: 8px;
+    top: 6px;
+    left: 8px;
     font-size: 24px;
     padding: 8px;
     border-radius: 50px;
@@ -134,13 +131,31 @@ restaltando ventana emergente */
 }
 
 .nav_menu_close:hover{
-    background: rgba(0,0,0,0.05);
+    background: rgba(0,0,0,0.1);
 }
     
 
 /* Propiedades - Versión Móvil:
   (El ancho máximo se establece 1 px menor a ancho mínimo versión tablet) */
 @media screen and (max-width: 766.9px){
+
+    /* Casilla de verificación, misma altura y ancho que .logo y .avion*/
+    #nav_menu_checkbox{
+        opacity: 0;
+        display: block;
+        width: 62px;
+        height: 34.1667px;
+        order: 1; 
+    }
+    /* Posición contenedor logotipo */
+    #logo{
+        order: 2;
+    }
+    /* Posición contenedor avión */
+    #avion{
+        order: 3;
+    }
+
 
 	/* Ventana Emergente en Versión Móvil */
 	.nav_menu_container{
@@ -158,8 +173,8 @@ restaltando ventana emergente */
         position: fixed;
  		/* Es posicionado en 0 arriba en relación al contenedor inicial */
         top: 0;
-        /* Es posicionado en -320px a la  en relación al contenedor inicial */
-        right: -267px;
+        /* Es posicionado en -267px en relación al contenedor inicial */
+        left: -267px;
 
         background-color: #fff;
         z-index: 3;
@@ -215,7 +230,7 @@ restaltando ventana emergente */
 
 	/* ~ Hermano: Todo parrafo que venga después */
 	#nav_menu_checkbox:checked ~ .nav_menu_container{
-		transform: translateX(-100%);
+		transform: translateX(100%);
 		box-shadow: 0px 5px 20px rgba(0,0,0,.5);
 	}
 }
